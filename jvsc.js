@@ -72,9 +72,12 @@ function diagonalwincheck(){
 }
 
 $('h2').text(player+" pick a column to drop");
+
 var i=0;
+var j=0;
 $('.board button').on('click',function(){
 	if(i!=2){
+		j=j+1;
 		var col=$(this).closest('td').index();
 		var bottomavail=checkbottom(col);
 		colorchanger(bottomavail,col,playercolor);
@@ -86,18 +89,23 @@ $('.board button').on('click',function(){
 			i = 2;
 			
 		}
-		
-	else if(i==0){
-		i=1;
-		player=pm;
-		$('h2').text("Turn of: " + player);
-		playercolor='blue';
-	}
-	else if(i==1){
-		i=0;
-		player=mm;
-		$('h2').text("Turn of: " + player);
-		playercolor='yellow';
-	}
+		else if(j==42){
+			$('h2').text( "It's a draw!!");
+			$('h5').text('Refresh to Restart');
+			$('h1').fadeOut('fast');
+			$('h4').fadeOut('fast');
+		}
+		else if(i==0){
+			i=1;
+			player=pm;
+			$('h2').text("Now it's your turn, " + player);
+			playercolor='blue';
+		}
+		else if(i==1){
+			i=0;
+			player=mm;
+			$('h2').text("Now it's your turn, " + player);
+			playercolor='green';
+		}
 	}
 })
