@@ -1,6 +1,6 @@
 var mm=prompt("Enter first player's name");
 var pm=prompt("Enter second player's name");
-var playercolor='green';
+var playercolor='yellow';
 var player=mm;
 var table = $('table tr');
 
@@ -97,7 +97,7 @@ $('.board button').on('click',function(){
 		i=0;
 		player=mm;
 		$('h2').text("Turn of: " + player);
-		playercolor='green';
+		playercolor='yellow';
 	}
 	}
 })
