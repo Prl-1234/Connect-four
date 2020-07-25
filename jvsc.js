@@ -105,7 +105,7 @@ $('.board button').on('click',function(){
 			i=0;
 			player=mm;
 			$('h2').text("Now it's your turn, " + player);
-			playercolor='green';
+			playercolor='yellow';
 		}
 	}
 })
