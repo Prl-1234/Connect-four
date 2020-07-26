@@ -72,6 +72,7 @@ function diagonalwincheck(){
 }
 
 $('h2').text(player+" pick a column to drop");
+$('h2').css('border-color',playercolor);
 
 var i=0;
 var j=0;
@@ -83,6 +84,7 @@ $('.board button').on('click',function(){
 		colorchanger(bottomavail,col,playercolor);
 		if(verticalwincheck()||horizontalwincheck()||diagonalwincheck()){
 			$('h2').text( player +', You have won!');
+			$('h2').css('border-color',playercolor);
 			$('h5').text('Refresh to Restart');
 			$('h1').fadeOut('fast');
 			$('h4').fadeOut('fast');			
@@ -91,6 +93,7 @@ $('.board button').on('click',function(){
 		}
 		else if(j==42){
 			$('h2').text( "It's a draw!!");
+		$('h2').css('border-color','pink');
 			$('h5').text('Refresh to Restart');
 			$('h1').fadeOut('fast');
 			$('h4').fadeOut('fast');
@@ -100,12 +103,14 @@ $('.board button').on('click',function(){
 			player=pm;
 			$('h2').text("Now it's your turn, " + player);
 			playercolor='blue';
+			$('h2').css('border-color',playercolor);
 		}
 		else if(i==1){
 			i=0;
 			player=mm;
 			$('h2').text("Now it's your turn, " + player);
 			playercolor='yellow';
+			$('h2').css('border-color',playercolor);
 		}
 	}
 })
